@@ -1,0 +1,28 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate G:\Programs\altera\12.1sp1\projects\computer\comboFP.qsys --block-symbol-file --output-directory=G:\Programs\altera\12.1sp1\projects\computer\comboFP --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading computer/comboFP.qsys
+Progress: Reading input file
+Progress: Adding nios_custom_instr_floating_point_2_combi_0 [altera_nios_custom_instr_floating_point_2_combi 17.1]
+Progress: Parameterizing module nios_custom_instr_floating_point_2_combi_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate G:\Programs\altera\12.1sp1\projects\computer\comboFP.qsys --synthesis=VERILOG --output-directory=G:\Programs\altera\12.1sp1\projects\computer\comboFP\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading computer/comboFP.qsys
+Progress: Reading input file
+Progress: Adding nios_custom_instr_floating_point_2_combi_0 [altera_nios_custom_instr_floating_point_2_combi 17.1]
+Progress: Parameterizing module nios_custom_instr_floating_point_2_combi_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: comboFP: Generating comboFP "comboFP" for QUARTUS_SYNTH
+Info: nios_custom_instr_floating_point_2_combi_0: "comboFP" instantiated altera_nios_custom_instr_floating_point_2_combi "nios_custom_instr_floating_point_2_combi_0"
+Info: comboFP: Done "comboFP" with 2 modules, 6 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

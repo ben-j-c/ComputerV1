@@ -1,0 +1,8 @@
+lfsr_memoryMap(
+	input								CLOCK_50,
+	inout [15:0]					BUS,
+	input [15:0]					address,
+	input writeEn,
+	input outputEn
+	);
+	parameter BASE = 0;

@@ -1,0 +1,171 @@
+Flow report for computer
+Sat Mar 09 20:50:14 2019
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Sat Mar 09 20:49:19 2019       ;
+; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                   ; computer                                    ;
+; Top-level Entity Name           ; computer                                    ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CSEMA5F31C6                                ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 2,867 / 32,070 ( 9 % )                      ;
+; Total registers                 ; 2156                                        ;
+; Total pins                      ; 152 / 457 ( 33 % )                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 2,667,520 / 4,065,280 ( 66 % )              ;
+; Total DSP Blocks                ; 5 / 87 ( 6 % )                              ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 03/09/2019 20:44:37 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; computer            ;
++-------------------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                 ;
++-------------------------------------+------------------------------------------------------------+--------------------+-------------+------------+
+; Assignment Name                     ; Value                                                      ; Default Value      ; Entity Name ; Section Id ;
++-------------------------------------+------------------------------------------------------------+--------------------+-------------+------------+
+; ADVANCED_PHYSICAL_OPTIMIZATION      ; Off                                                        ; On                 ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 193989709993242.155218227704336                            ; --                 ; --          ; --         ;
+; ENABLE_SIGNALTAP                    ; On                                                         ; --                 ; --          ; --         ;
+; INFER_RAMS_FROM_RAW_LOGIC           ; Off                                                        ; On                 ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                         ; --                 ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                          ; --                 ; --          ; --         ;
+; MISC_FILE                           ; programMemory_bb.v                                         ; --                 ; --          ; --         ;
+; MISC_FILE                           ; dataMemory_inst.v                                          ; --                 ; --          ; --         ;
+; MISC_FILE                           ; dataMemory_bb.v                                            ; --                 ; --          ; --         ;
+; MISC_FILE                           ; MemoryMapped_bb.v                                          ; --                 ; --          ; --         ;
+; MISC_FILE                           ; fifoBuffer_inst.v                                          ; --                 ; --          ; --         ;
+; MISC_FILE                           ; add_float_sim/add_float.vo                                 ; --                 ; --          ; --         ;
+; MISC_FILE                           ; add_half.cmp                                               ; --                 ; --          ; --         ;
+; MISC_FILE                           ; add_half_sim/add_half.vo                                   ; --                 ; --          ; --         ;
+; MISC_FILE                           ; mult_half.cmp                                              ; --                 ; --          ; --         ;
+; MISC_FILE                           ; mult_half_sim/mult_half.vo                                 ; --                 ; --          ; --         ;
+; MISC_FILE                           ; sub_half.cmp                                               ; --                 ; --          ; --         ;
+; MISC_FILE                           ; sub_half_sim/sub_half.vo                                   ; --                 ; --          ; --         ;
+; MISC_FILE                           ; div_half.cmp                                               ; --                 ; --          ; --         ;
+; MISC_FILE                           ; div_half_sim/div_half_memoryC0_uid146_invTables_lutmem.hex ; --                 ; --          ; --         ;
+; MISC_FILE                           ; div_half_sim/div_half_memoryC1_uid149_invTables_lutmem.hex ; --                 ; --          ; --         ;
+; MISC_FILE                           ; div_half_sim/div_half.vo                                   ; --                 ; --          ; --         ;
+; MISC_FILE                           ; conv_fixed16ToHalf.cmp                                     ; --                 ; --          ; --         ;
+; MISC_FILE                           ; conv_fixed16ToHalf_sim/conv_fixed16ToHalf.vo               ; --                 ; --          ; --         ;
+; MISC_FILE                           ; castInt_half.cmp                                           ; --                 ; --          ; --         ;
+; MISC_FILE                           ; castInt_half_sim/castInt_half.vo                           ; --                 ; --          ; --         ;
+; NUM_PARALLEL_PROCESSORS             ; All                                                        ; --                 ; --          ; --         ;
+; OPTIMIZATION_TECHNIQUE              ; Speed                                                      ; Balanced           ; --          ; --         ;
+; OPTIMIZE_POWER_DURING_FITTING       ; Off                                                        ; Normal compilation ; --          ; --         ;
+; OPTIMIZE_POWER_DURING_SYNTHESIS     ; Off                                                        ; Normal compilation ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                     ; --                 ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                     ; --                 ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                     ; --                 ; --          ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                        ; --                 ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                      ; --                 ; --          ; --         ;
+; SLD_FILE                            ; db/stp1_auto_stripped.stp                                  ; --                 ; --          ; --         ;
+; SMART_RECOMPILE                     ; On                                                         ; Off                ; --          ; --         ;
+; SPD_FILE                            ; add_float.spd                                              ; --                 ; --          ; --         ;
+; SPD_FILE                            ; add_half.spd                                               ; --                 ; --          ; --         ;
+; SPD_FILE                            ; mult_half.spd                                              ; --                 ; --          ; --         ;
+; SPD_FILE                            ; sub_half.spd                                               ; --                 ; --          ; --         ;
+; SPD_FILE                            ; div_half.spd                                               ; --                 ; --          ; --         ;
+; SPD_FILE                            ; conv_fixed16ToHalf.spd                                     ; --                 ; --          ; --         ;
+; SPD_FILE                            ; castInt_half.spd                                           ; --                 ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                         ; --                 ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                         ; --                 ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                         ; --                 ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                         ; --                 ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                         ; --                 ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                         ; --                 ; --          ; --         ;
+; USE_SIGNALTAP_FILE                  ; stp1.stp                                                   ; --                 ; --          ; --         ;
+; VERILOG_INPUT_VERSION               ; SystemVerilog_2005                                         ; Verilog_2001       ; --          ; --         ;
+; VERILOG_SHOW_LMF_MAPPING_MESSAGES   ; Off                                                        ; --                 ; --          ; --         ;
++-------------------------------------+------------------------------------------------------------+--------------------+-------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:01:19     ; 1.0                     ; 5092 MB             ; 00:02:35                           ;
+; Fitter                    ; 00:03:00     ; 1.9                     ; 7538 MB             ; 00:07:43                           ;
+; Assembler                 ; 00:00:14     ; 1.0                     ; 4942 MB             ; 00:00:14                           ;
+; TimeQuest Timing Analyzer ; 00:00:54     ; 2.6                     ; 5717 MB             ; 00:02:10                           ;
+; Total                     ; 00:05:27     ; --                      ; --                  ; 00:12:42                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++---------------------------+------------------+------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++---------------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis      ; Confusor         ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; Confusor         ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; Confusor         ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; Confusor         ; Windows 10 ; 10.0       ; x86_64         ;
++---------------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off computer -c computer
+quartus_fit --read_settings_files=off --write_settings_files=off computer -c computer
+quartus_asm --read_settings_files=off --write_settings_files=off computer -c computer
+quartus_sta computer -c computer
+
+
+

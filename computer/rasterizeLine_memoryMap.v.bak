@@ -1,0 +1,95 @@
+module rasterizeLine_memoryMap(
+	input								CLOCK_50,
+	inout [15:0]					BUS,
+	input [31:0]					address,
+	input writeEn,
+	input outputEn
+	);
+	parameter BASE = 0;
+	parameter WAIT = 0, ROW1_MULT1 = 1, ROW1_MULT2 = 2, ROW1_SUM1 = 3, ROW1_SUM2 = 4;
+	
+	reg [15:0] inputMemory[16];
+	reg [15:0] outputMemory[2];
+	reg [15:0] outputBuffer_in, outputBuffer_out, m1, m1, m3;
+	reg [7:0] state;
+	reg zChange, matChange;
+	wire [15:0] inBankAddress, outBankAddress, ax, ay, az, cx, cy, cz, ez, resultm1, resultm2, resultm3;
+	wire [15:0] matR1 [3];
+	wire [15:0] matR2 [3];
+	wire [15:0] matR3 [3];
+	wire cs_input;
+	wire cs_output;
+	
+	assign cs_input = (address >= BASE) & (address < (BASE + 16));
+	assign cs_output = (address == (BASE + 16)) | (address == (BASE + 17));
+	
+	assign inBankAddress = address - BASE; 
+	assign outBankAddress = address - (BASE + 16);
+	assign BUS = (cs_input&outputEn)? outputBuffer_in:'bz;
+	assign BUS = (cs_output&outputEn)? outputBuffer_out:'bz;
+	
+	assign ax = inputMemory[0];
+	assign ay = inputMemory[1];
+	assign az = inputMemory[2];
+	
+	assign cx = inputMemory[3];
+	assign cy = inputMemory[4];
+	assign cz = inputMemory[5];
+	
+	assign matR1[0] = inputMemory[6];
+	assign matR1[1] = inputMemory[7];
+	assign matR1[2] = inputMemory[8];
+	assign matR2[0] = inputMemory[9];
+	assign matR2[1] = inputMemory[10];
+	assign matR2[2] = inputMemory[11];
+	assign matR3[0] = inputMemory[12];
+	assign matR3[1] = inputMemory[13];
+	assign matR3[2] = inputMemory[14];
+	
+	assign ez = inputMemory[15];
+	
+	mult_half multX(
+		.a(m1),
+		.b(ax),
+		.clk(CLOCK_50),
+		.areset(0),
+		.q(resultm1)
+		);
+	mult_half multy(
+		.a(m1),
+		.b(ax),
+		.clk(CLOCK_50),
+		.areset(0),
+		.q(resultm2)
+		);
+	mult_half multz(
+		.a(m1),
+		.b(ax),
+		.clk(CLOCK_50),
+		.areset(0),
+		.q(resultm3)
+		);
+	
+	
+	always @ (posedge CLOCK_50) begin
+		if(state == WAIT) begin
+		end
+	end
+	
+	always @ (posedge CLOCK_50) begin
+		if(cs_input) begin
+			if(writeEn) begin
+				inputMemory[inBankAddress] <= BUS;
+			end
+			
+			outputBuffer_in <= inputMemory[inBankAddress];
+		end
+		else if(cs_output) begin
+			if(writeEn)
+				outputMemory[inBankAddress] <= BUS;
+			
+			outputBuffer_out <= outputMemory[outBankAddress];
+		end
+	end
+	
+endmodule

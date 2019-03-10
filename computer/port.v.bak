@@ -1,0 +1,35 @@
+
+module port(clock, HE, DE, HRW, DRW, host_dat, device_dat, service);
+	parameter SIZE = 1;
+	input clock, HE, DE, HRW, DRW;
+	inout[SIZE-1: 0] host_dat, device_dat;
+	output reg service;
+	
+	wire HR, HW, DR, DW, writeEn, readEn;
+	
+	assign HR = HE & ~HRW;//read when host requested
+	assign HW = HE & HRW;//wreite when host requested
+	assign DR = DE & ~DRW;//read when device requested
+	assign DW = DE & DRW & ~HW;//write only when the device requested and the host didn't
+	assign readEn = HR | DR;
+	assign writeEn = HW | DW;
+	
+	wire[SIZE-1:0] datIn;
+	reg[SIZE-1:0] value;
+	
+	assign datIn = (HW)? host_dat: {SIZE{1'bz}};
+	assign datIn = (DW)? device_dat: {SIZE{1'bz}};
+	assign host_dat = (HR)? value: {SIZE{1'bz}};
+	assign device_dat = (DR)? value: {SIZE{1'bz}};
+	
+	always@(posedge clock) begin
+		if(writeEn) begin
+			value <= datIn;
+			service <= 1'b1;
+		end
+		else if(readEn)
+			service <= 1'b0;
+			
+	end
+endmodule
+

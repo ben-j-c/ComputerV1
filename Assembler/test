@@ -1,0 +1,36 @@
+.data data.txt
+.include memoryConfig.txt
+
+inp sys, PORT_SW;
+cmpi sys, 0x0;
+jz NOSWITCH;
+
+gcr sys, control;
+gcr sys, control;
+ori sys, 0x0002;
+scr control, sys;
+
+NOSWITCH:
+
+movi sp, STACK_BASE;
+movi sp, STACK_BASE;
+setmi sp, LFSR_DATA;
+
+call ENABLE_KEYBOARD_INT_WRITER;
+movi system, 1;
+scr segment, system;
+scr control, system;
+
+movi argb, HELLO_WORLD;
+movi argc, 32;
+call PRINT_VERTICAL;
+
+movi ax, 0x0000;
+BACK:
+getmi bx, LFSR_DATA;
+setmx ax, bx;
+inc ax;
+jmp BACK;
+
+.include keyboard_int_screen_writer
+.include print

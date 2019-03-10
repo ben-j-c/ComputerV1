@@ -1,0 +1,69 @@
+module ps2Keyboard_memoryMap(
+	inout 		          		PS2_CLK,
+	inout 		          		PS2_CLK2,
+	inout 		          		PS2_DAT,
+	inout 		          		PS2_DAT2,
+	input								CLOCK_50,
+	inout [15:0]					BUS,
+	input [15:0]					address,
+	input addressDataEn,
+	input writeEn,
+	input outputEn
+	
+	);
+	reg [7:0] data;
+	reg [2:0] shifts;
+	reg parity_generated;
+	reg parity_recieved;
+	
+	reg[2:0] state;
+	parameter IDLE_START = 0, DATA = 1, PARITY = 2, STOP = 3, PARITY_ERROR = 4, STOP_ERROR = 5, START_ERROR = 6;
+	reg error;
+	
+	assign port_data = data;
+	
+	assign LED = data;
+	
+	always @(negedge PS2_CLK) begin
+		if(state == IDLE_START) begin
+			if(~PS2_DAT) begin
+				state <= DATA;
+				parity_generated <= 1;
+			end
+		end
+		else if(state == DATA) begin
+			parity_generated <= parity_generated^PS2_DAT;
+			data[6:0] <= data[7:1];
+			data[7] <= PS2_DAT;
+			
+			shifts <= shifts + 1;
+			
+			if(((shifts + 1)&3'b111) == 3'b0)
+				state <= PARITY;
+			else
+				state <= DATA;
+		end
+		else if(state == PARITY) begin
+			parity_recieved <= PS2_DAT;
+			state <= STOP;
+		end
+		else if(state == STOP) begin
+				state <= IDLE_START;
+		end
+	end
+	
+	edgeDetect(state == STOP, CLOCK_50, DE);
+	assign DRW = DE;
+	
+endmodule
+
+module edgeDetect(input x, clk, output z);
+	
+	reg pastValue;
+	assign z = x&(~pastValue);
+	
+	always @(posedge clk)
+		pastValue <= x;
+	
+endmodule
+

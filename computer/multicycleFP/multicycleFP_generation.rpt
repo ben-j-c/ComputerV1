@@ -1,0 +1,28 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate G:\Programs\altera\12.1sp1\projects\computer\multicycleFP.qsys --block-symbol-file --output-directory=G:\Programs\altera\12.1sp1\projects\computer\multicycleFP --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading computer/multicycleFP.qsys
+Progress: Reading input file
+Progress: Adding nios_custom_instr_floating_point_2_multi_0 [altera_nios_custom_instr_floating_point_2_multi 17.1]
+Progress: Parameterizing module nios_custom_instr_floating_point_2_multi_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate G:\Programs\altera\12.1sp1\projects\computer\multicycleFP.qsys --synthesis=VERILOG --output-directory=G:\Programs\altera\12.1sp1\projects\computer\multicycleFP\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading computer/multicycleFP.qsys
+Progress: Reading input file
+Progress: Adding nios_custom_instr_floating_point_2_multi_0 [altera_nios_custom_instr_floating_point_2_multi 17.1]
+Progress: Parameterizing module nios_custom_instr_floating_point_2_multi_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: multicycleFP: Generating multicycleFP "multicycleFP" for QUARTUS_SYNTH
+Info: nios_custom_instr_floating_point_2_multi_0: "multicycleFP" instantiated altera_nios_custom_instr_floating_point_2_multi "nios_custom_instr_floating_point_2_multi_0"
+Info: multicycleFP: Done "multicycleFP" with 2 modules, 15 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

@@ -1,0 +1,7 @@
+module VGA_memoryMap(
+	input CLOCK_50,
+	inout[15:0] device_dat1, device_dat2, //data and address
+	input service1, service2,
+	output[7:0] VGA_R, VGA_G, VGA_B,
+	output VGA_CLK, VGA_BLANK, VGA_HS, VGA_VS, VGA_SYNC, DRW1, DRW2
+	);

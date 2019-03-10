@@ -1,0 +1,42 @@
+.define DISPLAY_BASE 0x8000
+
+.define PORT_SW 0x00
+.define PORT_KP 0x01
+.define PORT_HEX 0x02
+.define PORT_KEYBOARD 0x03
+.define PORT_LED 0x04
+.define PORT_THETA 0x10
+.define PORT_SIN 0x11
+.define PORT_COS 0x12
+
+.define KDECODE_IN 0x92C0
+.define KDECODE_OUT 0x92C1
+
+.define MULT_A 0x92C2
+.define MULT_B 0x92C3
+.define MULT_R 0x92C4
+
+.define DIV_A 0x92C5
+.define DIV_B 0x92C6
+.define DIV_R 0x92C7
+.define DIV_MOD 0x92C8
+
+.define VEC_X1 0x92C9
+.define VEC_Y1 0x92CA
+.define VEC_Z1 0x92CB
+.define VEC_X2 0x92CC
+.define VEC_Y2 0x92CD
+.define VEC_Z2 0x92CE
+.define VEC_DOT 0x92CF
+.define VEC_CROSSX 0x92D0
+.define VEC_CROSSY 0x92D1
+.define VEC_CROSSZ 0x92D2
+
+.define LFSR_DATA 0x92D3
+
+.define STACK_BASE 0x7FFF
+
+.define cr0 0x00
+.define cr1 0x01
+.define cr2 0x02
+.define cr3 0x03

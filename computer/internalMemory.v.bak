@@ -1,0 +1,8 @@
+module internalMemory(
+	
+	);
+	parameter BASE = 0;
+	parameter LENGTH = 1;
+	
+	
+endmodule

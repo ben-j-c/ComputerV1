@@ -1,0 +1,15 @@
+
+State Machine - |computer|ControlUnit:CU|state
+Name state.011 state.010 state.001 state.000 state.100 
+state.000 0 0 0 0 0 
+state.001 0 0 1 1 0 
+state.010 0 1 0 1 0 
+state.011 1 0 0 1 0 
+state.100 0 0 0 1 1 
+
+State Machine - |computer|ps2Keyboard:PORT_KYB|state
+Name state.STOP state.PARITY state.DATA state.IDLE_START 
+state.IDLE_START 0 0 0 0 
+state.DATA 0 0 1 1 
+state.PARITY 0 1 0 1 
+state.STOP 1 0 0 1 

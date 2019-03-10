@@ -1,0 +1,40 @@
+module vector_memoryMap(
+	input								CLOCK_50,
+	inout [15:0]					BUS,
+	input [15:0]					address,
+	input writeEn,
+	input outputEn
+	);
+	parameter BASE = 0;
+		
+	wire cs_input1, cs_input2;
+	wire cs_output;
+	
+	reg [15:0] x1, y1, z1, x2, y2, z2;
+	wire[15:0] result, mod;
+	
+	
+	assign cs_x1 = (address == BASE);
+	assign cs_y1 = (address == (BASE + 1));
+	assign cs_z1 = (address == (BASE + 2));
+	assign cs_x2 = (address == (BASE + 3));
+	assign cs_y2 = (address == (BASE + 4));
+	assign cs_z2 = (address == (BASE + 5));
+	
+	always @(posedge CLOCK_50) begin
+		if(cs_input1 && writeEn)
+			input1 <= BUS;
+		if(cs_input2 && writeEn)
+			input2 <= BUS;
+	end
+	
+	assign result = input1/input2;
+	assign mod = input1%input2;
+	
+	assign BUS = (cs_input1&outputEn)? input1:'bz;
+	assign BUS = (cs_input2&outputEn)? input2:'bz;
+	assign BUS = (cs_output1&outputEn)? result:'bz;
+	assign BUS = (cs_output2&outputEn)? mod:'bz;
+	
+	
+endmodule

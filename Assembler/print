@@ -1,0 +1,111 @@
+PRINT:
+	push ta;
+	push tb;
+	push tc;
+	
+	mov tb, argb;
+	mov tc, argc;
+	addi tc, DISPLAY_BASE;
+	PRINT_LOOP:
+		cmpi tc, 0x92C0;
+		jz PRINT_DONE;
+		jns PRINT_DONE;
+		getm ta, tb;
+		cmpi ta, 0;
+		jz PRINT_DONE;
+		
+		setm tc, ta;
+		
+		inc tb;
+		inc tc;
+		jmp PRINT_LOOP;
+	PRINT_DONE:
+	
+	pop tc;
+	pop tb;
+	pop ta;
+ret;
+
+PRINT_VERTICAL:
+	push ta;
+	push tb;
+	push tc;
+	
+	mov tb, argb;
+	mov tc, argc;
+	addi tc, DISPLAY_BASE;
+	PRINT_LOOP2:
+		cmpi tc, 0x92C0;
+		jz PRINT_DONE2;
+		jns PRINT_DONE2;
+		getm ta, tb;
+		cmpi ta, 0;
+		jz PRINT_DONE2;
+		
+		setm tc, ta;
+		
+		inc tb;
+		addi tc, 80;
+		jmp PRINT_LOOP2;
+	PRINT_DONE2:
+	
+	pop tc;
+	pop tb;
+	pop ta;
+ret;
+
+PRINT_DIAGONAL_FW:
+	push ta;
+	push tb;
+	push tc;
+	
+	mov tb, argb;
+	mov tc, argc;
+	addi tc, DISPLAY_BASE;
+	PRINT_LOOP3:
+		cmpi tc, 0x92C0;
+		jz PRINT_DONE3;
+		jns PRINT_DONE3;
+		getm ta, tb;
+		cmpi ta, 0;
+		jz PRINT_DONE3;
+		
+		setm tc, ta;
+		
+		inc tb;
+		addi tc, 81;
+		jmp PRINT_LOOP3;
+	PRINT_DONE3:
+	
+	pop tc;
+	pop tb;
+	pop ta; 
+ret;
+
+PRINT_DIAGONAL_BW:
+	push ta;
+	push tb;
+	push tc;
+	
+	mov tb, argb;
+	mov tc, argc;
+	addi tc, DISPLAY_BASE;
+	PRINT_LOOP4:
+		cmpi tc, 0x92C0;
+		jz PRINT_DONE4;
+		jns PRINT_DONE4;
+		getm ta, tb;
+		cmpi ta, 0;
+		jz PRINT_DONE4;
+		
+		setm tc, ta;
+		
+		inc tb;
+		addi tc, 79;
+		jmp PRINT_LOOP4;
+	PRINT_DONE4:
+	
+	pop tc;
+	pop tb;
+	pop ta; 
+ret;

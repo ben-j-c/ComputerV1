@@ -1,0 +1,3 @@
+set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) multicycleFP/multicycleFP.qip]
+set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) cordicFixedPoint/cordicFixedPoint.qip]
+set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) comboFP/comboFP.qip]

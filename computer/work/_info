@@ -1,0 +1,1118 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dG:/Users/Ben/programming/verilog/4612/project
+vALU
+Z0 !s110 1546999965
+!i10b 1
+!s100 E1I2h]SQ?zc]j6H<54J6:0
+IFY0VV<_01`k@hJB_IamXQ0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dG:/Programs/altera/12.1sp1/projects/computer
+w1523812761
+8G:/Programs/altera/12.1sp1/projects/computer/ALU.v
+FG:/Programs/altera/12.1sp1/projects/computer/ALU.v
+L0 2
+Z3 OV;L;10.5c;63
+r1
+!s85 0
+31
+Z4 !s108 1546999965.000000
+!s107 G:/Programs/altera/12.1sp1/projects/computer/ALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/ALU.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+n@a@l@u
+vbcdToHex
+R0
+!i10b 1
+!s100 KF`ihc?jX;Y?:YKYUzAA12
+Idgn`_fM[GHa4OH[H[hfZI3
+R1
+R2
+Z7 w1535221639
+Z8 8G:/Programs/altera/12.1sp1/projects/computer/util.v
+Z9 FG:/Programs/altera/12.1sp1/projects/computer/util.v
+L0 11
+R3
+r1
+!s85 0
+31
+R4
+Z10 !s107 G:/Programs/altera/12.1sp1/projects/computer/util.v|
+Z11 !s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/util.v|
+!i113 1
+R5
+R6
+nbcd@to@hex
+vcolourDecode
+Z12 !s110 1546999967
+!i10b 1
+!s100 TMh5XTFT^NRW8Pz;IoEhX1
+IA=3<GD:mQgJ^jWm:<zb1b1
+R1
+R2
+w1517278830
+8G:/Programs/altera/12.1sp1/projects/computer/colourDecode.v
+FG:/Programs/altera/12.1sp1/projects/computer/colourDecode.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z13 !s108 1546999967.000000
+!s107 G:/Programs/altera/12.1sp1/projects/computer/colourDecode.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/colourDecode.v|
+!i113 1
+R5
+R6
+ncolour@decode
+vcomputer
+Z14 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+R0
+!i10b 1
+!s100 WhiPaXW;84EWoJ?7=jcin1
+IbV6GcF<C1bE2T[3hbO:Nd1
+R1
+!s105 computer_v_unit
+S1
+R2
+w1546999258
+8G:\Programs\altera\12.1sp1\projects\computer\computer.v
+FG:\Programs\altera\12.1sp1\projects\computer\computer.v
+L0 6
+R3
+r1
+!s85 0
+31
+R4
+!s107 G:\Programs\altera\12.1sp1\projects\computer\computer.v|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|G:\Programs\altera\12.1sp1\projects\computer\computer.v|
+!i113 1
+Z15 o-work work -sv
+R6
+vControlUnit
+R0
+!i10b 1
+!s100 jFDGRN^^eLihl2`ejHg[<2
+IW@lV1JiK<2DV_@<ELHV;[0
+R1
+R2
+Z16 w1546998957
+Z17 8G:\Programs\altera\12.1sp1\projects\computer\ControlUnit.v
+Z18 FG:\Programs\altera\12.1sp1\projects\computer\ControlUnit.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+Z19 !s107 G:\Programs\altera\12.1sp1\projects\computer\ControlUnit.v|
+Z20 !s90 -reportprogress|300|-work|work|-stats=none|G:\Programs\altera\12.1sp1\projects\computer\ControlUnit.v|
+!i113 1
+R5
+R6
+n@control@unit
+vconv_fixed16ToHalf
+!s110 1546999968
+!i10b 1
+!s100 F7DlEN8cWKdS^JnAID4?T0
+IDa_>bX<iZ?15n4OGfiL0z0
+R1
+R2
+w1535931484
+8G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf.v
+FG:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf.v
+L0 8
+R3
+r1
+!s85 0
+31
+!s108 1546999968.000000
+!s107 G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf.v|
+!i113 1
+R5
+R6
+nconv_fixed16@to@half
+Econv_fixed16tohalf_0002
+Z21 w1535931459
+Z22 DPx3 lpm 14 lpm_components 0 22 o>5?C55WDlB2NYDK:lTcf3
+Z23 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 Y=^4ME2QMP:;`QDa7XnRj0
+Z24 DPx9 altera_mf 20 altera_mf_components 0 22 4N<SNU^TCk4Hfomh0EYlV1
+Z25 DPx4 work 21 dspba_library_package 0 22 g5ge0<PbUA3NecLg[8;Cj3
+Z26 DPx4 ieee 9 math_real 0 22 Sk6CSihbPL<f[^Shm]=KX0
+Z27 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z28 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z29 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R2
+Z30 8G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/conv_fixed16ToHalf_0002.vhd
+Z31 FG:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/conv_fixed16ToHalf_0002.vhd
+l0
+L36
+V5iiz;;fD`YT_9CXO;=]?62
+!s100 z>]:AFIRj>Hn5J_2UjeA?2
+Z32 OV;C;10.5c;63
+32
+Z33 !s110 1548219711
+!i10b 1
+Z34 !s108 1548219710.000000
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/conv_fixed16ToHalf_0002.vhd|
+Z36 !s107 G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/conv_fixed16ToHalf_0002.vhd|
+!i113 1
+Z37 o-work work -2002 -explicit
+Z38 tExplicit 1 CvgOpt 0
+Anormal
+R22
+R23
+R24
+R25
+R26
+R27
+R28
+R29
+DEx4 work 23 conv_fixed16tohalf_0002 0 22 5iiz;;fD`YT_9CXO;=]?62
+l150
+L45
+Voe<@UG6PW3fm8N7l979_O3
+!s100 9YambKl6`b9CDS75PbnAg1
+R32
+32
+R33
+!i10b 1
+R34
+R35
+R36
+!i113 1
+R37
+R38
+vcounter
+R0
+!i10b 1
+!s100 kSz_QK1@K1FI`F[bn=S7K1
+I_kFzTl`4dnKJU?B8i0W>30
+R1
+R2
+Z39 w1546822513
+Z40 8G:/Programs/altera/12.1sp1/projects/computer/VGA.v
+Z41 FG:/Programs/altera/12.1sp1/projects/computer/VGA.v
+L0 89
+R3
+r1
+!s85 0
+31
+R4
+Z42 !s107 G:/Programs/altera/12.1sp1/projects/computer/VGA.v|
+Z43 !s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/VGA.v|
+!i113 1
+R5
+R6
+vdataMemory
+Z44 !s110 1546999966
+!i10b 1
+!s100 6FT6]A<fC?NYXLJ?1?V2[1
+I<[ASc4cg3CY^bYge:]lVO2
+R1
+R2
+w1535460424
+8G:/Programs/altera/12.1sp1/projects/computer/dataMemory.v
+FG:/Programs/altera/12.1sp1/projects/computer/dataMemory.v
+Z45 L0 39
+R3
+r1
+!s85 0
+31
+Z46 !s108 1546999966.000000
+!s107 G:/Programs/altera/12.1sp1/projects/computer/dataMemory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/dataMemory.v|
+!i113 1
+R5
+R6
+ndata@memory
+vdecoder
+R0
+!i10b 1
+!s100 [JOQ:fJ[<2lON2FFnZU1e1
+IP<XoBL[dD<96hhHg<b_Do2
+R1
+R2
+R7
+R8
+R9
+L0 38
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R6
+vdiv_half
+R44
+!i10b 1
+!s100 ;Z5:10G_D2ZH@80l^l3Fa0
+ICzKQ8KO;V>5zbn6db^WJg2
+R1
+R2
+w1535927350
+8G:/Programs/altera/12.1sp1/projects/computer/div_half.v
+FG:/Programs/altera/12.1sp1/projects/computer/div_half.v
+L0 8
+R3
+r1
+!s85 0
+31
+R46
+!s107 G:/Programs/altera/12.1sp1/projects/computer/div_half.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/div_half.v|
+!i113 1
+R5
+R6
+vdivide_memoryMap
+R44
+!i10b 1
+!s100 =Qfe]QJ=W0=96oB5QQzD61
+Im4eVOAda4IeMU@TQo8D3?3
+R1
+R2
+w1540600694
+8G:/Programs/altera/12.1sp1/projects/computer/divide_memoryMap.v
+FG:/Programs/altera/12.1sp1/projects/computer/divide_memoryMap.v
+L0 1
+R3
+r1
+!s85 0
+31
+R46
+!s107 G:/Programs/altera/12.1sp1/projects/computer/divide_memoryMap.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/divide_memoryMap.v|
+!i113 1
+R5
+R6
+ndivide_memory@map
+Edspba_delay
+R21
+R25
+R28
+R29
+R2
+Z47 8G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/dspba_library.vhd
+Z48 FG:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/dspba_library.vhd
+l0
+L18
+VJZ>XXZi]3nAML><T1OJmD2
+!s100 >TY9@l4a>2O5Wd_6jF4:g0
+R32
+32
+Z49 !s110 1546999969
+!i10b 1
+Z50 !s108 1546999969.000000
+Z51 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/dspba_library.vhd|
+Z52 !s107 G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/dspba_library.vhd|
+!i113 1
+R37
+R38
+Adelay
+R25
+R28
+R29
+DEx4 work 11 dspba_delay 0 22 JZ>XXZi]3nAML><T1OJmD2
+l37
+L34
+VH[ibU<H]FT4<DCgHmIjFa0
+!s100 DAfPXKZhR<Ac>Wg8zYj1H3
+R32
+32
+R49
+!i10b 1
+R50
+R51
+R52
+!i113 1
+R37
+R38
+Pdspba_library_package
+R28
+R29
+R21
+R2
+8G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/dspba_library_package.vhd
+FG:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/dspba_library_package.vhd
+l0
+L17
+Vg5ge0<PbUA3NecLg[8;Cj3
+!s100 @e;XE0e^oAdIdzY=Rc];H3
+R32
+32
+R49
+!i10b 1
+R50
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/dspba_library_package.vhd|
+!s107 G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/dspba_library_package.vhd|
+!i113 1
+R37
+R38
+Edspba_pipe
+R21
+R27
+R28
+R29
+R2
+R47
+R48
+l0
+L343
+VhX_ehDHUhEGT`<4CLHDEW1
+!s100 ko3XcgZgdPgSD;SDR?Wmi2
+R32
+32
+R49
+!i10b 1
+R50
+R51
+R52
+!i113 1
+R37
+R38
+Artl
+R27
+R28
+R29
+DEx4 work 10 dspba_pipe 0 22 hX_ehDHUhEGT`<4CLHDEW1
+l362
+L356
+VF>oh8b`LjePmYI9jU_S=k2
+!s100 =]hA3YBJaaU9dNBMla?I?2
+R32
+32
+R49
+!i10b 1
+R50
+R51
+R52
+!i113 1
+R37
+R38
+Edspba_sync_reg
+R21
+R25
+R27
+R28
+R29
+R2
+R47
+R48
+l0
+L93
+V[2:MQ1fH@k]9VCDY^FzcN0
+!s100 G`[2Ci2RQWoL`zK>2h>oj2
+R32
+32
+R49
+!i10b 1
+R50
+R51
+R52
+!i113 1
+R37
+R38
+Async_reg
+R25
+R27
+R28
+R29
+DEx4 work 14 dspba_sync_reg 0 22 [2:MQ1fH@k]9VCDY^FzcN0
+l136
+L117
+VXjK]3?6G<i`:[Y@3Y=3Bo1
+!s100 D5ba3Bk5_`1nL6?j<JkK81
+R32
+32
+R49
+!i10b 1
+R50
+R51
+R52
+!i113 1
+R37
+R38
+vedgeDetect
+R12
+!i10b 1
+!s100 9DK2]ndfQJFWh=>DdbYOG3
+IeZi0N2[jgfVHid3zj=cFd0
+R1
+R2
+Z53 w1546998909
+Z54 8G:\Programs\altera\12.1sp1\projects\computer\ps2Keyboard.v
+Z55 FG:\Programs\altera\12.1sp1\projects\computer\ps2Keyboard.v
+L0 76
+R3
+r1
+!s85 0
+31
+R13
+Z56 !s107 G:\Programs\altera\12.1sp1\projects\computer\ps2Keyboard.v|
+Z57 !s90 -reportprogress|300|-work|work|-stats=none|G:\Programs\altera\12.1sp1\projects\computer\ps2Keyboard.v|
+!i113 1
+R5
+R6
+nedge@detect
+vfdiv
+R0
+!i10b 1
+!s100 9[2oW3:MW>mmC?6`0<n>h0
+I1P@zJfKgjzC>TS47MAU;i0
+R1
+R2
+R7
+R8
+R9
+L0 65
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R6
+vfifoBuffer
+R44
+!i10b 1
+!s100 [^PNefnUlf]o>9M=@NY>]1
+IGEVm=KW4=ljhW5R^VME?B3
+R1
+R2
+w1535460381
+8G:/Programs/altera/12.1sp1/projects/computer/fifoBuffer.v
+FG:/Programs/altera/12.1sp1/projects/computer/fifoBuffer.v
+R45
+R3
+r1
+!s85 0
+31
+R46
+!s107 G:/Programs/altera/12.1sp1/projects/computer/fifoBuffer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/fifoBuffer.v|
+!i113 1
+R5
+R6
+nfifo@buffer
+vinternalMemory
+R44
+!i10b 1
+!s100 3T]R`icLN2RRlY<0UT::G3
+IchhWjQ7E1A=oib7DfaCOm1
+R1
+R2
+w1539123024
+8G:/Programs/altera/12.1sp1/projects/computer/internalMemory.v
+FG:/Programs/altera/12.1sp1/projects/computer/internalMemory.v
+L0 1
+R3
+r1
+!s85 0
+31
+R46
+!s107 G:/Programs/altera/12.1sp1/projects/computer/internalMemory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/internalMemory.v|
+!i113 1
+R5
+R6
+ninternal@memory
+vkeyboard_input
+R44
+!i10b 1
+!s100 LZO1NC_nk[CXYZMm<lbXB1
+ISDSBMBFMe5IiWLKz`5cf81
+R1
+R2
+w1512697991
+8G:/Programs/altera/12.1sp1/projects/computer/keyboard.v
+FG:/Programs/altera/12.1sp1/projects/computer/keyboard.v
+L0 1
+R3
+r1
+!s85 0
+31
+R46
+!s107 G:/Programs/altera/12.1sp1/projects/computer/keyboard.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/keyboard.v|
+!i113 1
+R5
+R6
+vlfsr_memoryMap
+R44
+!i10b 1
+!s100 zX@OXZ[dF8DD?N;66R_QV2
+Ijlfljh?A7PPIoCVfUR2HB0
+R1
+R2
+w1546998823
+8G:\Programs\altera\12.1sp1\projects\computer\lfsr_memoryMap.v
+FG:\Programs\altera\12.1sp1\projects\computer\lfsr_memoryMap.v
+L0 1
+R3
+r1
+!s85 0
+31
+R46
+!s107 G:\Programs\altera\12.1sp1\projects\computer\lfsr_memoryMap.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:\Programs\altera\12.1sp1\projects\computer\lfsr_memoryMap.v|
+!i113 1
+R5
+R6
+nlfsr_memory@map
+vMemoryMapped
+R44
+!i10b 1
+!s100 X;YGZbGD^>K?>gm3KbIYc3
+IiWU]S`=3gJO@z20Cm;^6<0
+R1
+R2
+w1535460429
+8G:/Programs/altera/12.1sp1/projects/computer/MemoryMapped.v
+FG:/Programs/altera/12.1sp1/projects/computer/MemoryMapped.v
+R45
+R3
+r1
+!s85 0
+31
+R46
+!s107 G:/Programs/altera/12.1sp1/projects/computer/MemoryMapped.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/MemoryMapped.v|
+!i113 1
+R5
+R6
+n@memory@mapped
+vmult_half
+R12
+!i10b 1
+!s100 M9Wi[[<fBbU8K9:oFFNML2
+I8Zm1M>cn2LdZbE`2G6hOQ2
+R1
+R2
+w1535926822
+8G:/Programs/altera/12.1sp1/projects/computer/mult_half.v
+FG:/Programs/altera/12.1sp1/projects/computer/mult_half.v
+L0 8
+R3
+r1
+!s85 0
+31
+R46
+!s107 G:/Programs/altera/12.1sp1/projects/computer/mult_half.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/mult_half.v|
+!i113 1
+R5
+R6
+Emult_half_0002
+Z58 w1535926805
+R22
+R23
+R24
+R25
+R26
+R27
+R28
+R29
+R2
+Z59 8G:/Programs/altera/12.1sp1/projects/computer/mult_half/mult_half_0002.vhd
+Z60 FG:/Programs/altera/12.1sp1/projects/computer/mult_half/mult_half_0002.vhd
+l0
+L36
+VYDL1GnUcLU?:JZn0o3CzV2
+!s100 l16KZ60<SbL21`=Loj0H20
+R32
+32
+Z61 !s110 1548220112
+!i10b 1
+Z62 !s108 1548220112.000000
+Z63 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/mult_half/mult_half_0002.vhd|
+Z64 !s107 G:/Programs/altera/12.1sp1/projects/computer/mult_half/mult_half_0002.vhd|
+!i113 1
+R37
+R38
+Anormal
+R22
+R23
+R24
+R25
+R26
+R27
+R28
+R29
+DEx4 work 14 mult_half_0002 0 22 YDL1GnUcLU?:JZn0o3CzV2
+l184
+L46
+VL4bCM4UJCAJAgM7QQid;m2
+!s100 fL2ROeRIA`IUW_Y^h^Wbd0
+R32
+32
+R61
+!i10b 1
+R62
+R63
+R64
+!i113 1
+R37
+R38
+vmuxN
+R0
+!i10b 1
+!s100 k?ROP;HLjCXk27WU1`@Tb0
+ILDCXZaCkz`5SU7g43H:JA2
+R1
+R2
+R7
+R8
+R9
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R6
+nmux@n
+vnextIrq
+R0
+!i10b 1
+!s100 2o1Hb?W_6T7GE4GTWXlX>2
+IlLa1`zV;OKnP30VlS5M:33
+R1
+R2
+R16
+R17
+R18
+L0 1143
+R3
+r1
+!s85 0
+31
+R4
+R19
+R20
+!i113 1
+R5
+R6
+nnext@irq
+vpixelDecode
+R0
+!i10b 1
+!s100 GOJR85M9=Dn48o=C_zWE31
+IaG32PI]R1>8PVEcNg77Q[0
+R1
+R2
+Z65 w1539137634
+Z66 8G:\Programs\altera\12.1sp1\projects\computer\VGA_memoryMap.v
+Z67 FG:\Programs\altera\12.1sp1\projects\computer\VGA_memoryMap.v
+L0 96
+R3
+r1
+!s85 0
+31
+R4
+Z68 !s107 G:\Programs\altera\12.1sp1\projects\computer\VGA_memoryMap.v|
+Z69 !s90 -reportprogress|300|-work|work|-stats=none|G:\Programs\altera\12.1sp1\projects\computer\VGA_memoryMap.v|
+!i113 1
+R5
+R6
+npixel@decode
+vpixelMap
+R0
+!i10b 1
+!s100 Mg`c<CI]HDWNomF5jD3B92
+Ih^d5QNBV^OC:Hika^DjMJ1
+R1
+R2
+R65
+R66
+R67
+L0 129
+R3
+r1
+!s85 0
+31
+R4
+R68
+R69
+!i113 1
+R5
+R6
+npixel@map
+vport
+R12
+!i10b 1
+!s100 6FY9EbYBAabS^LhSodl<82
+IJZc2P]PaeL4PgSRn1GKcG2
+R1
+R2
+w1515633256
+8G:/Programs/altera/12.1sp1/projects/computer/port.v
+FG:/Programs/altera/12.1sp1/projects/computer/port.v
+L0 2
+R3
+r1
+!s85 0
+31
+R13
+!s107 G:/Programs/altera/12.1sp1/projects/computer/port.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/port.v|
+!i113 1
+R5
+R6
+vports
+R12
+!i10b 1
+!s100 F:n_b;YnNQnlEL:<9:3Wd1
+IJINd@K]=F94a;R?:OKeYo0
+R1
+R2
+w1535222330
+8G:/Programs/altera/12.1sp1/projects/computer/ports.v
+FG:/Programs/altera/12.1sp1/projects/computer/ports.v
+L0 1
+R3
+r1
+!s85 0
+31
+R13
+!s107 G:/Programs/altera/12.1sp1/projects/computer/ports.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/ports.v|
+!i113 1
+R5
+R6
+vprogramMemory
+R12
+!i10b 1
+!s100 dWmE1TSLnd_eUVHgB<md=0
+IgnV1;HWlThiGZJSVXmf7=0
+R1
+R2
+w1535460435
+8G:/Programs/altera/12.1sp1/projects/computer/programMemory.v
+FG:/Programs/altera/12.1sp1/projects/computer/programMemory.v
+R45
+R3
+r1
+!s85 0
+31
+R13
+!s107 G:/Programs/altera/12.1sp1/projects/computer/programMemory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/programMemory.v|
+!i113 1
+R5
+R6
+nprogram@memory
+vprojectPoint_memoryMap
+R14
+!s110 1548220010
+!i10b 1
+!s100 d<>:jcRgg6nWIgMZ=5Y2b3
+I^DJYA@JTeh0U5N5LS^15@1
+R1
+!s105 projectPoint_memoryMap_v_unit
+S1
+R2
+w1548219864
+8G:/Programs/altera/12.1sp1/projects/computer/projectPoint_memoryMap.v
+FG:/Programs/altera/12.1sp1/projects/computer/projectPoint_memoryMap.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1548220010.000000
+!s107 G:/Programs/altera/12.1sp1/projects/computer/projectPoint_memoryMap.v|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/projectPoint_memoryMap.v|
+!i113 1
+R15
+R6
+nproject@point_memory@map
+vps2Keyboard
+R12
+!i10b 1
+!s100 Mn5?g<HJ]LggDHQN`bQao1
+IGc8;V?<eWTNm1U=[8oWTY0
+R1
+R2
+R53
+R54
+R55
+L0 1
+R3
+r1
+!s85 0
+31
+R13
+R56
+R57
+!i113 1
+R5
+R6
+nps2@keyboard
+vregFile
+R12
+!i10b 1
+!s100 ZRBViH0JbIOLb:6694b0d3
+Iih?m5DgnOB@g65[_Bm1n20
+R1
+R2
+w1517202011
+8G:/Programs/altera/12.1sp1/projects/computer/regFile.v
+FG:/Programs/altera/12.1sp1/projects/computer/regFile.v
+L0 1
+R3
+r1
+!s85 0
+31
+R13
+!s107 G:/Programs/altera/12.1sp1/projects/computer/regFile.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/regFile.v|
+!i113 1
+R5
+R6
+nreg@file
+vsinCosPort
+R12
+!i10b 1
+!s100 5WE5M[Z8PBzU4?:769X4:3
+I3fCW=NEcClMA@1?GI<I213
+R1
+R2
+w1546824688
+8G:/Programs/altera/12.1sp1/projects/computer/sinCosPort.v
+FG:/Programs/altera/12.1sp1/projects/computer/sinCosPort.v
+L0 1
+R3
+r1
+!s85 0
+31
+R13
+!s107 G:/Programs/altera/12.1sp1/projects/computer/sinCosPort.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/sinCosPort.v|
+!i113 1
+R5
+R6
+nsin@cos@port
+vsub_half
+Z70 !s110 1546999964
+!i10b 1
+!s100 UOmh?:5ebAnRCiHXY_Y]B3
+Io_]D;0cjDCR2cm;FonPbd0
+R1
+R2
+w1535926895
+8G:/Programs/altera/12.1sp1/projects/computer/sub_half.v
+FG:/Programs/altera/12.1sp1/projects/computer/sub_half.v
+L0 8
+R3
+r1
+!s85 0
+31
+Z71 !s108 1546999964.000000
+!s107 G:/Programs/altera/12.1sp1/projects/computer/sub_half.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/sub_half.v|
+!i113 1
+R5
+R6
+Esub_half_0002
+Z72 w1535926878
+R22
+R23
+R24
+R25
+R26
+R27
+R28
+R29
+R2
+Z73 8G:/Programs/altera/12.1sp1/projects/computer/sub_half/sub_half_0002.vhd
+Z74 FG:/Programs/altera/12.1sp1/projects/computer/sub_half/sub_half_0002.vhd
+l0
+L36
+Va_Z7lCZ_5aPTTX2Ua5:?<1
+!s100 gkodFUz;T8Yhz]J]nf;S33
+R32
+32
+Z75 !s110 1547943317
+!i10b 1
+Z76 !s108 1547943316.000000
+Z77 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/sub_half/sub_half_0002.vhd|
+Z78 !s107 G:/Programs/altera/12.1sp1/projects/computer/sub_half/sub_half_0002.vhd|
+!i113 1
+R37
+R38
+Anormal
+R22
+R23
+R24
+R25
+R26
+R27
+R28
+R29
+DEx4 work 13 sub_half_0002 0 22 a_Z7lCZ_5aPTTX2Ua5:?<1
+l318
+L46
+VHNIC0bCSEXZgiL?A3nVQO0
+!s100 Yaf96;o5g4<dSWAFkmRYG2
+R32
+32
+R75
+!i10b 1
+R76
+R77
+R78
+!i113 1
+R37
+R38
+vsw_input
+R70
+!i10b 1
+!s100 I0EO0lZ3BBOz6TdXVIRJl1
+I620RnFzNTHfPnja[XmobD2
+R1
+R2
+w1524545535
+8G:/Programs/altera/12.1sp1/projects/computer/sw_port.v
+FG:/Programs/altera/12.1sp1/projects/computer/sw_port.v
+L0 1
+R3
+r1
+!s85 0
+31
+R71
+!s107 G:/Programs/altera/12.1sp1/projects/computer/sw_port.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/sw_port.v|
+!i113 1
+R5
+R6
+vtextDecode
+R0
+!i10b 1
+!s100 _a]5:[jJDo`?URYWcO?Ch1
+IOWF4O4H>R0WjCKD5=0PeA0
+R1
+R2
+w1526864658
+8G:/Programs/altera/12.1sp1/projects/computer/textDecode.v
+FG:/Programs/altera/12.1sp1/projects/computer/textDecode.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 G:/Programs/altera/12.1sp1/projects/computer/textDecode.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/textDecode.v|
+!i113 1
+R5
+R6
+ntext@decode
+vtextPage
+R0
+!i10b 1
+!s100 M<gH71:hzgLg]5m^FfE4a2
+IofGHDeDbHo8bViM4bo:>S3
+R1
+R2
+w1517278022
+8G:/Programs/altera/12.1sp1/projects/computer/textPage.v
+FG:/Programs/altera/12.1sp1/projects/computer/textPage.v
+R45
+R3
+r1
+!s85 0
+31
+R4
+!s107 G:/Programs/altera/12.1sp1/projects/computer/textPage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/Programs/altera/12.1sp1/projects/computer/textPage.v|
+!i113 1
+R5
+R6
+ntext@page
+vtriState
+R0
+!i10b 1
+!s100 PWJGWA>LRK=YdfHO8<gfQ2
+IESFF7m?S=;e3zhEfY1fkU2
+R1
+R2
+R16
+R17
+R18
+L0 1134
+R3
+r1
+!s85 0
+31
+R4
+R19
+R20
+!i113 1
+R5
+R6
+ntri@state
+vVGA
+R0
+!i10b 1
+!s100 `7A_d4n6UYhn7i5JMT_^L0
+I@e65zKF:GFfe26YG9Mk;=2
+R1
+R2
+R39
+R40
+R41
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R42
+R43
+!i113 1
+R5
+R6
+n@v@g@a
+vVGA_memoryMap
+R0
+!i10b 1
+!s100 L?;GW8k9T@C_YH8m?>dBQ2
+ISmUkKJF9dP8>1i``@PhdS0
+R1
+R2
+R65
+R66
+R67
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R68
+R69
+!i113 1
+R5
+R6
+n@v@g@a_memory@map

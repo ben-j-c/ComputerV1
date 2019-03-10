@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="div_half_sim/div_half_memoryC0_uid146_invTables_lutmem.hex"
+   type="HEX" />
+ <file
+   path="div_half_sim/div_half_memoryC1_uid149_invTables_lutmem.hex"
+   type="HEX" />
+ <file path="div_half_sim/div_half.vo" type="VERILOG" />
+ <topLevel name="div_half" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

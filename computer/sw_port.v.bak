@@ -1,0 +1,21 @@
+module sw_input(input CLOCK_50, service, input[9:0] SW, output [15:0] data, output DE, DRW);
+	reg[14:0] counter;
+		
+	
+	initial
+		counter = 0;
+
+	assign data = {6'b0, SW};
+	assign DE = (counter + 1 == 25000;
+	assign DRW = DE;
+	
+	always@(posedge CLOCK_50) begin
+		if(counter + 1 == 25000) begin
+			counter <= 0;
+		end
+		else begin
+			counter <= counter + 1;
+		end
+	end
+	
+endmodule

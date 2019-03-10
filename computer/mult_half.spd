@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="mult_half_sim/mult_half.vo" type="VERILOG" />
+ <topLevel name="mult_half" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

@@ -1,0 +1,4 @@
+module keyboard(input CLOCK_50, input KEY);
+
+
+endmodule

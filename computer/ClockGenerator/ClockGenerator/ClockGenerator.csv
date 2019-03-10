@@ -1,0 +1,22 @@
+# system info ClockGenerator on 2019.02.23.16:00:08
+system_info:
+name,value
+DEVICE,5CSEMA5F31C6
+DEVICE_FAMILY,Cyclone V
+GENERATION_ID,1550955588
+#
+#
+# Files generated for ClockGenerator on 2019.02.23.16:00:08
+files:
+filepath,kind,attributes,module,is_top
+simulation/ClockGenerator.v,VERILOG,,ClockGenerator,true
+simulation/submodules/ClockGenerator_sys_sdram_pll_0.v,VERILOG,,ClockGenerator_sys_sdram_pll_0,false
+simulation/submodules/ClockGenerator_sys_sdram_pll_0_sys_pll.vo,VERILOG,,ClockGenerator_sys_sdram_pll_0_sys_pll,false
+simulation/submodules/altera_up_avalon_reset_from_locked_signal.v,VERILOG,,altera_up_avalon_reset_from_locked_signal,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+ClockGenerator.sys_sdram_pll_0,ClockGenerator_sys_sdram_pll_0
+ClockGenerator.sys_sdram_pll_0.sys_pll,ClockGenerator_sys_sdram_pll_0_sys_pll
+ClockGenerator.sys_sdram_pll_0.reset_from_locked,altera_up_avalon_reset_from_locked_signal

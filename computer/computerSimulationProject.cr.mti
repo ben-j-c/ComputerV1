@@ -1,0 +1,273 @@
+G:/Programs/altera/12.1sp1/projects/computer/util.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/util.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module muxN
+-- Compiling module bcdToHex
+-- Compiling module decoder
+-- Compiling module fdiv
+
+Top level modules:
+	muxN
+	bcdToHex
+	decoder
+	fdiv
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/computer.v {1 {vlog -work work -sv -stats=none {G:\Programs\altera\12.1sp1\projects\computer\computer.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module computer
+
+Top level modules:
+	computer
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/colourDecode.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/colourDecode.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module colourDecode
+
+Top level modules:
+	colourDecode
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/ports.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/ports.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module ports
+
+Top level modules:
+	ports
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/MemoryMapped.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/MemoryMapped.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module MemoryMapped
+
+Top level modules:
+	MemoryMapped
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/programMemory.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/programMemory.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module programMemory
+
+Top level modules:
+	programMemory
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/textDecode.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/textDecode.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module textDecode
+
+Top level modules:
+	textDecode
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/ControlUnit.v {2 {vlog -work work -stats=none {G:\Programs\altera\12.1sp1\projects\computer\ControlUnit.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module ControlUnit
+** Warning: G:\Programs\altera\12.1sp1\projects\computer\ControlUnit.v(88): (vlog-2182) 'nextIPointer' might be read before written in always_comb or always @* block.
+-- Compiling module triState
+-- Compiling module nextIrq
+
+Top level modules:
+	ControlUnit
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module conv_fixed16ToHalf
+
+Top level modules:
+	conv_fixed16ToHalf
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/ALU.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/ALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/divide_memoryMap.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/divide_memoryMap.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module divide_memoryMap
+
+Top level modules:
+	divide_memoryMap
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/dataMemory.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/dataMemory.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module dataMemory
+
+Top level modules:
+	dataMemory
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/mult_half/mult_half_0002.vhd {1 {vcom -work work -2002 -explicit -stats=none G:/Programs/altera/12.1sp1/projects/computer/mult_half/mult_half_0002.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Loading package dspba_library_package
+-- Loading package altera_mf_components
+-- Loading package altera_lnsim_components
+-- Loading package LPM_COMPONENTS
+-- Compiling entity mult_half_0002
+-- Compiling architecture normal of mult_half_0002
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/VGA_memoryMap.v {1 {vlog -work work -stats=none {G:\Programs\altera\12.1sp1\projects\computer\VGA_memoryMap.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module VGA_memoryMap
+-- Compiling module pixelDecode
+-- Compiling module pixelMap
+
+Top level modules:
+	VGA_memoryMap
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/mult_half.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/mult_half.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module mult_half
+
+Top level modules:
+	mult_half
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/sinCosPort.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/sinCosPort.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module sinCosPort
+
+Top level modules:
+	sinCosPort
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/port.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/port.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module port
+
+Top level modules:
+	port
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/VGA.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/VGA.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module VGA
+-- Compiling module counter
+
+Top level modules:
+	VGA
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/sw_port.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/sw_port.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module sw_input
+
+Top level modules:
+	sw_input
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/fifoBuffer.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/fifoBuffer.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module fifoBuffer
+
+Top level modules:
+	fifoBuffer
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/internalMemory.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/internalMemory.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module internalMemory
+
+Top level modules:
+	internalMemory
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/ps2Keyboard.v {1 {vlog -work work -stats=none {G:\Programs\altera\12.1sp1\projects\computer\ps2Keyboard.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module ps2Keyboard
+-- Compiling module edgeDetect
+
+Top level modules:
+	ps2Keyboard
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/regFile.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/regFile.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module regFile
+
+Top level modules:
+	regFile
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/dspba_library_package.vhd {1 {vcom -work work -2002 -explicit -stats=none G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/dspba_library_package.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package dspba_library_package
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/projectPoint_memoryMap.v {1 {vlog -work work -sv -stats=none G:/Programs/altera/12.1sp1/projects/computer/projectPoint_memoryMap.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module projectPoint_memoryMap
+
+Top level modules:
+	projectPoint_memoryMap
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/conv_fixed16ToHalf_0002.vhd {1 {vcom -work work -2002 -explicit -stats=none G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/conv_fixed16ToHalf_0002.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Loading package dspba_library_package
+-- Loading package altera_mf_components
+-- Loading package altera_lnsim_components
+-- Loading package LPM_COMPONENTS
+-- Compiling entity conv_fixed16ToHalf_0002
+-- Compiling architecture normal of conv_fixed16ToHalf_0002
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/keyboard.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/keyboard.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module keyboard_input
+
+Top level modules:
+	keyboard_input
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/textPage.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/textPage.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module textPage
+
+Top level modules:
+	textPage
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/dspba_library.vhd {1 {vcom -work work -2002 -explicit -stats=none G:/Programs/altera/12.1sp1/projects/computer/conv_fixed16ToHalf/dspba_library.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package dspba_library_package
+-- Compiling entity dspba_delay
+-- Compiling architecture delay of dspba_delay
+-- Loading package NUMERIC_STD
+-- Compiling entity dspba_sync_reg
+-- Compiling architecture sync_reg of dspba_sync_reg
+-- Compiling entity dspba_pipe
+-- Compiling architecture rtl of dspba_pipe
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/sub_half/sub_half_0002.vhd {1 {vcom -work work -2002 -explicit -stats=none G:/Programs/altera/12.1sp1/projects/computer/sub_half/sub_half_0002.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Loading package dspba_library_package
+-- Loading package altera_mf_components
+-- Loading package altera_lnsim_components
+-- Loading package LPM_COMPONENTS
+-- Compiling entity sub_half_0002
+-- Compiling architecture normal of sub_half_0002
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/sub_half.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/sub_half.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module sub_half
+
+Top level modules:
+	sub_half
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/div_half.v {1 {vlog -work work -stats=none G:/Programs/altera/12.1sp1/projects/computer/div_half.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module div_half
+
+Top level modules:
+	div_half
+
+} {} {}} G:/Programs/altera/12.1sp1/projects/computer/lfsr_memoryMap.v {1 {vlog -work work -stats=none {G:\Programs\altera\12.1sp1\projects\computer\lfsr_memoryMap.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module lfsr_memoryMap
+
+Top level modules:
+	lfsr_memoryMap
+
+} {} {}}

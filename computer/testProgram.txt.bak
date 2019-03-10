@@ -1,0 +1,6 @@
+movi ax, 0x0F00
+outp 0xE, ax
+movi bx, 0x0000
+outp 0xE, bx
+HANG:
+jmp HANG

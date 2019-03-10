@@ -1,0 +1,14 @@
+
+
+KEYBOARD_RELEASED:
+word 0x00
+
+TIME_EPOCH_LOW:
+word 0
+TIME_EPOCH_HIGH:
+word 0
+SW_STATE:
+word 0
+
+LAST_LED:
+word 0

@@ -1,0 +1,114 @@
+
+MEM_COPY:
+	push arga;
+	push argb;
+	push argc;
+	push dx;
+	
+	MEM_COPY_LOOP:
+	cmpi argc, 0;
+	jz MEM_COPY_DONE;
+	getm dx, arga;
+	setm argb, dx;
+	inc arga;
+	inc argb;
+	dec argc;
+	jmp MEM_COPY_LOOP;
+	
+	MEM_COPY_DONE:
+	pop dx;
+	pop argc;
+	pop argb;
+	pop arga;
+ret;
+
+MEM_COPY_LTE:
+	push arga;
+	push argb;
+	push argc;
+	push dx;
+	
+	MEM_COPY_LOOP2:
+	cmpi argc, 0;
+	jz MEM_COPY_DONE2;
+	getm dx, arga;
+	setmx argb, dx;
+	inc arga;
+	inc argb;
+	dec argc;
+	jmp MEM_COPY_LOOP2;
+	
+	MEM_COPY_DONE2:
+	pop dx;
+	pop argc;
+	pop argb;
+	pop arga;
+ret;
+
+MEM_COPY_ETL:
+	push arga;
+	push argb;
+	push argc;
+	push dx;
+	
+	MEM_COPY_LOOP3:
+	cmpi argc, 0;
+	jz MEM_COPY_DONE3;
+	js MEM_COPY_DONE3;
+	getmx dx, arga;
+	setm argb, dx;
+	inc arga;
+	inc argb;
+	dec argc;
+	jmp MEM_COPY_LOOP3;
+	
+	MEM_COPY_DONE3:
+	pop dx;
+	pop argc;
+	pop argb;
+	pop arga;
+ret;
+
+MEM_COPY_ETE:
+	push arga;
+	push argb;
+	push argc;
+	push dx;
+	
+	MEM_COPY_LOOP4:
+	cmpi argc, 0;
+	jz MEM_COPY_DONE4;
+	getmx dx, arga;
+	setmx argb, dx;
+	inc arga;
+	inc argb;
+	dec argc;
+	jmp MEM_COPY_LOOP4;
+	
+	MEM_COPY_DONE4:
+	pop dx;
+	pop argc;
+	pop argb;
+	pop arga;
+ret;
+
+SUM_ATB:
+	push arga;
+	push argb;
+	push dx;
+	movi retval, 0;
+	
+	SUM_ATB_LOOP
+	cmp arga, argb;
+	jz SUM_ATB_DONE;
+	js SUM_ATB_DONE;
+	getm dx, arga;
+	add retval, dx;
+	inc arga;
+	jmp SUM_ATB_LOOP;
+	
+	SUM_ATB_DONE;
+	pop dx;
+	pop argb;
+	pop arga;
+ret;

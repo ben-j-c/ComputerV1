@@ -1,0 +1,606 @@
+module ControlUnit(
+	input[31:0] instruction,
+	input[15:0] PORT_service, bus,
+	input clk, ALU_cout, ALU_zero, ALU_sign,
+	output reg [15:0] PM_addr, imm,
+	output reg[3:0] ALU_opcode, PORT_select, RF_dst, RF_src,
+	output reg 
+			PORT_he, PORT_hrw, 
+			ALU_we, ALU_oe,
+			RF_we, RF_oe, RF_inc, RF_dec,
+			PM_ae,
+			DM_we, DM_ade, DM_oe,
+			CU_ie,
+	output[5:0] instrCode
+	);
+	
+	wire[15:0] immediate, crOut, interrupt_mask, unserviced_interrupts;
+	wire[3:0] dst, src, next_irq;
+	wire interruptEnable, unserviced_irq;
+	
+	assign immediate = instruction[31:16];
+	assign instrCode = instruction[5:0];
+	assign dst = instruction[9:6];
+	assign src = instruction[13:10];
+	
+	reg[15:0] iPointer, nextIPointer;
+	reg[15:0] interruptVectorTable [15:0];
+	reg[15:0] control_registers [15:0];
+	reg[1:0] state, nextState;
+	
+	initial begin
+		nextState = 0;
+		iPointer = 0;
+	end
+	
+	assign interrupt_mask = control_registers[1];
+	assign interruptEnable = control_registers[0][0];
+	assign unserviced_interrupts = interrupt_mask&PORT_service
+	assign unserviced_irq = |(unserviced_interrupts);
+	nextIrq getNextIRQ(unserviced_interrupts, next_irq);
+	
+	assign crOut = control_registers[src];
+	always@(posedge clk) begin 
+		iPointer <= nextIPointer;
+		state <= nextState;
+		if(instrCode == 52) begin
+			control_registers[dst] = bus;
+		end
+		else if(instrCode == 53) begin
+			interruptVectorTable[dst] = immediate;
+		end
+	end
+	
+	always@(*) begin
+		ALU_opcode = instrCode[3:0];
+		PM_addr = nextIPointer;
+		PORT_select = immediate[3:0];
+		if(~instrCode[5]) begin //all arithmetic operations
+			if(state == 0) begin
+				ALU_oe = 0;
+				ALU_we = 1;
+				CU_ie = instrCode[4];
+				DM_ade = 0;
+				DM_oe = 0;
+				DM_we = 0;
+				PM_ae = 0;
+				PORT_he = 0;
+				PORT_hrw = 0;
+				RF_dec = 0;
+				RF_dst = dst;
+				RF_inc = 0;
+				RF_oe = ~instrCode[4];
+				RF_src = src;
+				RF_we = 0;
+				nextState = 1;
+				nextIPointer = iPointer;
+			end
+			else if(state == 1) begin
+				ALU_oe = 1;
+				ALU_we = 0;
+				CU_ie = 0;
+				DM_ade = 0;
+				DM_oe = 0;
+				DM_we = 0;
+				PM_ae = 1;
+				PORT_he = 0;
+				PORT_hrw = 0;
+				RF_dec = 0;
+				RF_dst = dst;
+				RF_inc = 0;
+				RF_oe = 0;
+				//RF_src = x;
+				RF_we = 1;
+				nextState = 0;
+				nextIPointer = iPointer + 1;
+			end
+		end
+		else if(instrCode == 32) begin //inc
+			ALU_oe = 0;
+			ALU_we = 0;
+			DM_ade = 0;
+			DM_we = 0;
+			PM_ae = 1;
+			PORT_hrw = 0;
+			RF_dst = dst;
+			RF_inc = 1;
+			RF_we = 1;
+			nextState = 0;
+			nextIPointer = iPointer + 1;
+		end
+		else if(instrCode == 33) begin //dec
+			ALU_oe = 0;
+			ALU_we = 0;
+			DM_ade = 0;
+			DM_we = 0;
+			PM_ae = 1;
+			PORT_hrw = 0;
+			RF_dst = dst;
+			RF_inc = 0;
+			RF_dec = 1;
+			RF_we = 1;
+			nextState = 0;
+			nextIPointer = iPointer + 1;
+		end
+		else if(instrCode == 34) begin //cmp
+			ALU_oe = 0;
+			ALU_we = 1;
+			CU_ie = 0;
+			DM_ade = 0;
+			DM_oe = 0;
+			DM_we = 0;
+			PM_ae = 1;
+			PORT_he = 0;
+			PORT_hrw = 0;
+			RF_dec = 0;
+			RF_dst = dst;
+			RF_inc = 0;
+			RF_oe = 1;
+			RF_src = src;
+			RF_we = 0;
+			nextState = 0;
+			nextIPointer = iPointer + 1;
+		end
+		else if(instrCode == 35) begin //wait
+			//ALU_oe = x;
+			ALU_we = 0;
+			//CU_ie = x;
+			DM_ade = 0;
+			//DM_oe = x;
+			DM_we = 0;
+			PM_ae = 1;
+			//PORT_he = x;
+			PORT_hrw = 0;
+			RF_dec = 0;
+			//RF_dst = dst;
+			RF_inc = 0;
+			//RF_oe = x;
+			//RF_src = src;
+			RF_we = 0;
+			nextState = 0;
+			nextIPointer = (~(PORT_service[imm[3:0]]^imm[5]))? (iPointer + 1):iPointer;
+		end
+		else if(instrCode == 36) begin //mov
+			ALU_oe = 0;
+			ALU_we = 0;
+			CU_ie = 0;
+			DM_ade = 0;
+			DM_oe = 0;
+			DM_we = 0;
+			PM_ae = 1;
+			PORT_he = 0;
+			PORT_hrw = 0;
+			RF_dec = 0;
+			RF_dst = dst;
+			RF_inc = 0;
+			RF_oe = 1;
+			RF_src = src;
+			RF_we = 1;
+			nextState = 0;
+			nextIPointer = iPointer + 1;
+		end
+		else if(instrCode == 37) begin //movi
+			ALU_oe = 0;
+			ALU_we = 0;
+			CU_ie = 1;
+			DM_ade = 0;
+			DM_oe = 0;
+			DM_we = 0;
+			PM_ae = 1;
+			PORT_he = 0;
+			PORT_hrw = 0;
+			RF_dec = 0;
+			RF_dst = dst;
+			RF_inc = 0;
+			RF_oe = 0;
+			//RF_src = src;
+			RF_we = 1;
+			nextState = 0;
+			nextIPointer = iPointer + 1;
+		end
+		else if(instrCode == 38) begin //getm
+			if(state == 0) begin
+				ALU_oe = 0;
+				ALU_we = 0;
+				CU_ie = 0;
+				DM_ade = 1;
+				DM_oe = 0;
+				DM_we = 0;
+				PM_ae = 0;
+				PORT_he = 0;
+				PORT_hrw = 0;
+				RF_dec = 0;
+				RF_dst = src;
+				RF_inc = 0;
+				RF_oe = 0;
+				//RF_src = x;
+				RF_we = 0;
+				nextState = 1;
+				nextIPointer = iPointer;
+			end else if(state == 1) begin
+				ALU_oe = 0;
+				ALU_we = 0;
+				CU_ie = 0;
+				DM_ade = 0;
+				DM_oe = 1;
+				DM_we = 0;
+				PM_ae = 1;
+				PORT_he = 0;
+				PORT_hrw = 0;
+				RF_dec = 0;
+				RF_dst = dst;
+				RF_inc = 0;
+				RF_oe = 0;
+				//RF_src = x;
+				RF_we = 1;
+				nextState = 0;
+				nextIPointer = iPointer + 1;
+			end
+		end
+		else if(instrCode == 39) begin //setm
+			ALU_oe = 0;
+			ALU_we = 0;
+			CU_ie = 0;
+			DM_ade = 1;
+			DM_oe = 0;
+			DM_we = 1;
+			PM_ae = 1;
+			PORT_he = 0;
+			PORT_hrw = 0;
+			RF_dec = 0;
+			RF_dst = dst;
+			RF_inc = 0;
+			RF_oe = 1;
+			RF_src = src;
+			RF_we = 0;
+			nextState = 0;
+			nextIPointer = iPointer + 1;
+		end
+		else if(instrCode == 40) begin //inp
+			ALU_oe = 0;
+			ALU_we = 0;
+			CU_ie = 0;
+			DM_ade = 0;
+			DM_oe = 0;
+			DM_we = 0;
+			PM_ae = 1;
+			PORT_he = 1;
+			PORT_hrw = 0;
+			RF_dec = 0;
+			RF_dst = dst;
+			RF_inc = 0;
+			RF_oe = 0;
+			//RF_src = x;
+			RF_we = 1;
+			nextState = 0;
+			nextIPointer = iPointer + 1;
+		end
+		else if(instrCode == 41) begin //outp
+			ALU_oe = 0;
+			ALU_we = 0;
+			CU_ie = 0;
+			DM_ade = 0;
+			DM_oe = 0;
+			DM_we = 0;
+			PM_ae = 1;
+			PORT_he = 1;
+			PORT_hrw = 1;
+			RF_dec = 0;
+			//RF_dst = x;
+			RF_inc = 0;
+			RF_oe = 1;
+			RF_src = src;
+			RF_we = 0;
+			nextState = 0;
+			nextIPointer = iPointer + 1;
+		end
+		else if(instrCode == 42) begin //jmp
+			//ALU_oe = x;
+			ALU_we = 0;
+			//CU_ie = x;
+			DM_ade = 0;
+			//DM_oe = x;
+			DM_we = 0;
+			PM_ae = 1;
+			//PORT_he = x;
+			PORT_hrw = 0;
+			RF_dec = 0;
+			//RF_dst = x;
+			RF_inc = 0;
+			//RF_oe = x;
+			//RF_src = x;
+			RF_we = 0;
+			nextState = 0;
+			nextIPointer = immediate;
+		end
+		else if(instrCode == 43) begin //jz
+			//ALU_oe = x;
+			ALU_we = 0;
+			//CU_ie = x;
+			DM_ade = 0;
+			//DM_oe = x;
+			DM_we = 0;
+			PM_ae = 1;
+			PORT_he = 0;
+			PORT_hrw = 0;
+			RF_dec = 0;
+			//RF_dst = x;
+			RF_inc = 0;
+			//RF_oe = x;
+			//RF_src = x;
+			RF_we = 0;
+			nextState = 0;
+			nextIPointer = ALU_zero? imm:(iPointer+1);
+		end
+		else if(instrCode == 44) begin //jnz
+			//ALU_oe = x;
+			ALU_we = 0;
+			//CU_ie = x;
+			DM_ade = 0;
+			//DM_oe = x;
+			DM_we = 0;
+			PM_ae = 1;
+			PORT_he = 0;
+			PORT_hrw = 0;
+			RF_dec = 0;
+			//RF_dst = x;
+			RF_inc = 0;
+			//RF_oe = x;
+			//RF_src = x;
+			RF_we = 0;
+			nextState = 0;
+			nextIPointer = ALU_zero? (iPointer+1):imm;
+		end
+		else if(instrCode == 45) begin //js
+			//ALU_oe = x;
+			ALU_we = 0;
+			//CU_ie = x;
+			DM_ade = 0;
+			//DM_oe = x;
+			DM_we = 0;
+			PM_ae = 1;
+			PORT_he = 0;
+			PORT_hrw = 0;
+			RF_dec = 0;
+			//RF_dst = x;
+			RF_inc = 0;
+			//RF_oe = x;
+			//RF_src = x;
+			RF_we = 0;
+			nextState = 0;
+			nextIPointer = ALU_sign? imm:(iPointer+1);
+		end
+		else if(instrCode == 46) begin //jns
+			//ALU_oe = x;
+			ALU_we = 0;
+			//CU_ie = x;
+			DM_ade = 0;
+			//DM_oe = x;
+			DM_we = 0;
+			PM_ae = 1;
+			PORT_he = 0;
+			PORT_hrw = 0;
+			RF_dec = 0;
+			//RF_dst = x;
+			RF_inc = 0;
+			//RF_oe = x;
+			//RF_src = x;
+			RF_we = 0;
+			nextState = 0;
+			nextIPointer = ALU_sign? (iPointer+1):imm;
+		end
+		else if(instrCode == 47) begin //push
+			ALU_oe = 0;
+			ALU_we = 0;
+			CU_ie = 0;
+			DM_ade = 1;
+			DM_oe = 0;
+			DM_we = 1;
+			PM_ae = 1;
+			PORT_he = 0;
+			PORT_hrw = 0;
+			RF_dec = 1;
+			RF_dst = dst;
+			RF_inc = 0;
+			RF_oe = 1;
+			RF_src = src;
+			RF_we = 1;
+			nextState = 0;
+			nextIPointer = iPointer + 1;
+		end
+		else if(instrCode == 48) begin //pop
+			if(state == 0) begin
+				ALU_oe = 0;
+				ALU_we = 0;
+				CU_ie = 0;
+				DM_ade = 1;
+				DM_oe = 0;
+				DM_we = 0;
+				PM_ae = 0;
+				PORT_he = 0;
+				PORT_hrw = 0;
+				RF_dec = 0;
+				RF_dst = src;
+				RF_inc = 1;
+				RF_oe = 0;
+				//RF_src = x;
+				RF_we = 1;
+				nextState = 1;
+				nextIPointer = iPointer;
+			end else if(state == 1) begin
+				ALU_oe = 0;
+				ALU_we = 0;
+				CU_ie = 0;
+				DM_ade = 0;
+				DM_oe = 1;
+				DM_we = 0;
+				PM_ae = 1;
+				PORT_he = 0;
+				PORT_hrw = 0;
+				RF_dec = 0;
+				RF_dst = dst;
+				RF_inc = 0;
+				RF_oe = 0;
+				//RF_src = x;
+				RF_we = 1;
+				nextState = 0;
+				nextIPointer = iPointer + 1;
+			end
+		end
+		else if(instrCode == 49) begin //call
+			ALU_we = 0;
+			CU_ie = 1;
+			DM_ade = 1;
+			DM_oe = 0;
+			DM_we = 1;
+			PM_ae = 1;
+			PORT_he = 0;
+			PORT_hrw = 0;
+			RF_dec = 1;
+			RF_dst = 15;
+			RF_inc = 0;
+			RF_oe = 0;
+			//RF_src = x;
+			RF_we = 1;
+			nextState = 0;
+			nextIPointer = immediate;
+			imm = iPointer;
+		end
+		else if(instrCode == 50) begin //ret
+			if(state == 0) begin
+				ALU_we = 0;
+				CU_ie = 0;
+				DM_ade = 1;
+				DM_oe = 0;
+				DM_we = 0;
+				PM_ae = 0;
+				PORT_he = 0;
+				PORT_hrw = 0;
+				RF_dec = 0;
+				RF_dst = 15;
+				RF_inc = 1;
+				RF_oe = 0;
+				//RF_src = x;
+				RF_we = 1;
+				nextState = 1;
+				nextIPointer = iPointer;
+			end else if(state == 1) begin
+				ALU_we = 0;
+				CU_ie = 0;
+				DM_ade = 0;
+				DM_oe = 1;
+				DM_we = 0;
+				PM_ae = 1;
+				PORT_he = 0;
+				PORT_hrw = 0;
+				RF_dec = 0;
+				RF_dst = dst;
+				RF_inc = 0;
+				RF_oe = 0;
+				//RF_src = x;
+				RF_we = 0;
+				nextState = 0;
+				nextIPointer = bus + 1;
+			end
+		end
+		else if(instrCode == 51) begin //gcr
+			ALU_we = 0;
+			CU_ie = 1;
+			DM_ade = 0;
+			DM_oe = 0;
+			DM_we = 0;
+			PM_ae = 1;
+			PORT_he = 0;
+			PORT_hrw = 0;
+			RF_dec = 0;
+			RF_dst = dst;
+			RF_inc = 0;
+			RF_oe = 0;
+			RF_src = src;
+			RF_we = 1;
+			nextState = 0;
+			nextIPointer = iPointer + 1;
+			imm = crOut;
+		end
+		else if(instrCode == 52) begin //scr
+			ALU_we = 0;
+			CU_ie = 0;
+			DM_ade = 0;
+			DM_oe = 0;
+			DM_we = 0;
+			PM_ae = 1;
+			PORT_he = 0;
+			PORT_hrw = 0;
+			RF_dec = 0;
+			RF_dst = dst;
+			RF_inc = 0;
+			RF_oe = 1;
+			RF_src = src;
+			RF_we = 0;
+			nextState = 0;
+			nextIPointer = iPointer + 1;
+		end
+		else if(instrCode == 52) begin //sint
+			ALU_we = 0;
+			CU_ie = 0;
+			DM_ade = 0;
+			DM_oe = 0;
+			DM_we = 0;
+			PM_ae = 1;
+			PORT_he = 0;
+			PORT_hrw = 0;
+			RF_dec = 0;
+			RF_dst = dst;
+			RF_inc = 0;
+			RF_oe = 1;
+			RF_src = src;
+			RF_we = 0;
+			nextState = 0;
+			nextIPointer = iPointer + 1;
+		end
+		else begin
+			imm = immediate
+		end
+	end
+	
+endmodule
+
+module nextIrq(irqs, nextIrq);
+	input[15:0] irqs;
+	output reg [3:0] nextIrq;
+	
+	always @(*) begin
+		if(irqs[0])
+			nextIrq = 0;
+		else if(irqs[1])
+			nextIrq = 1;
+		else if(irqs[2])
+			nextIrq = 2;
+		else if(irqs[3])
+			nextIrq = 3;
+		else if(irqs[4])
+			nextIrq = 4;
+		else if(irqs[5])
+			nextIrq = 5;
+		else if(irqs[6])
+			nextIrq = 6;
+		else if(irqs[7])
+			nextIrq = 7;
+		else if(irqs[8])
+			nextIrq = 8;
+		else if(irqs[9])
+			nextIrq = 9;
+		else if(irqs[10])
+			nextIrq = 10;
+		else if(irqs[11])
+			nextIrq = 11;
+		else if(irqs[12])
+			nextIrq = 12;
+		else if(irqs[13])
+			nextIrq = 13;
+		else if(irqs[14])
+			nextIrq = 14;
+		else if(irqs[15])
+			nextIrq = 15;
+	end
+endmodule

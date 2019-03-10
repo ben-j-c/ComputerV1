@@ -1,0 +1,12 @@
+SHIFT_DOWN:
+word 0
+CAP_LOCK:
+word 0
+KEY_RELEASED:
+word 0
+CODED_KEY:
+word 0
+DECODED_KEY:
+word 0
+CURSOR_IDX:
+word 0x8A00

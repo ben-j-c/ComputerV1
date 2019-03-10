@@ -1,0 +1,39 @@
+ENABLE_SW_INT:
+push ax;
+sint 0x0, SW_INT;
+gcr ax, cr1;
+ori ax, 1;
+scr 0x01, ax;
+pop ax;
+ret;
+
+DISABLE_SW_INT:
+push ax;
+push bx;
+gcr ax, cr1;
+
+movi bx, 0xFFFF;
+xori bx, 1;
+and ax, bx;
+
+scr ax, cr1;
+pop bx;
+pop ax;
+ret;
+
+SW_INT:
+	inp sys, PORT_SW;
+	setmi sys, SW_STATE;
+	getmi sys, TIME_EPOCH_LOW;
+	addi sys, 1;
+	setmi sys, TIME_EPOCH_LOW;
+	getmi sys, TIME_EPOCH_HIGH;
+	addci sys, 0;
+	setmi sys, TIME_EPOCH_HIGH;
+	
+	call TIMER;
+	
+	lalu;
+	movi system, 1;
+	scr 0x0, system;
+ret

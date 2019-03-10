@@ -1,0 +1,84 @@
+.data data.txt
+movi ax, 0; init registers
+movi ax, 0; instruction 0 doesn't execute; ik how to fix this
+movi bx, 0x8000;
+movi cx, 0;
+movi dx, 1000;
+movi sp, 0x07FF; 2048 words in the data memory
+
+BACK:
+	inp ax, 0x00; poll the switches
+	cmp ax, cx;
+jz BACK;
+
+sint 0x0, SWITCH_INT; Set interrupt 0
+movi cx, 1; 
+scr 0x0, cx; enable interrupts
+scr 0x01, cx; enable interrupt 0
+
+outp sp, 0x02; print stack pointer to hex display
+
+HERE:
+jmp HERE; wait forever
+
+
+PRINT:
+	push sp, ta;
+	push sp, tb;
+	push sp, tc;
+	push sp, td;
+	
+	movi td, 0;
+	mov tb, argb;
+	mov tc, argc;
+	PRINT_LOOP:
+		getm ta, tb;
+		cmp ta, td;
+		jz PRINT_DONE;
+		
+		wait 0x0F;
+		outp ta, 0x0E;
+		outp tc, 0x0F;
+		
+		inc tb;
+		inc tc;
+		jmp PRINT_LOOP;
+	PRINT_DONE:
+	
+	pop td, sp;
+	pop tc, sp;
+	pop tb, sp;
+	pop ta, sp;
+ret;
+
+SWITCH_INT:
+	push sp, bx;
+	push sp, ax;
+	inp garb, 0x00;
+	movi bx, CURSOR_IDX;
+	
+	movi argb, HELLO_WORLD_CLEAR;
+	getm argc, bx;
+	call PRINT;
+	
+	movi argb, HELLO_WORLD;
+	inc argc;
+	
+	movi ax, 4800;
+	cmp argc, ax;
+	jnz SWITCH_INT_READY_TO_PRINT;
+		movi argc, 0;
+	
+	SWITCH_INT_READY_TO_PRINT:
+	call PRINT;
+	
+	outp argc, 0x02;
+	
+	setm bx, argc;
+	
+	pop ax, sp;
+	pop bx, sp;
+	lalu;
+	movi system, 1;
+	scr 0x0, sys;
+ret;
